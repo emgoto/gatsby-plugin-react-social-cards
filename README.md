@@ -47,9 +47,9 @@ Then, add the plugin to your `gatsby-config.js` file:
                 `,
                 queryToPages: (result) => 
                     result.data.allMarkdownRemark.nodes.map(node => {
-                        const slugWithoutTrailingSlash = node.fields.slug.replace(/\/$/, "");
+                        const slugWithoutSlashes = node.fields.slug.node.slug.replace(/\//g, '');
                         return {
-                            slug: `${slugWithoutTrailingSlash}`,
+                            slug: `/${slugWithoutSlashes}`,
                             pageContext: {
                                 title: node.frontmatter.title,
                                 coverImage: node.frontmatter.coverImage,
@@ -89,7 +89,7 @@ By default this React component will be opened and screenshotted at a 1200x628 r
 
 After completing the above steps, you can start up your Gatsby blog with `gatsby develop`.
 
-You will be able to view the pages for your social cards at `localhost:8000/your-post-slug-social-card`.
+You will be able to view the pages for your social cards at `localhost:8000/<your-post-slug>-social-card`.
 
 You can change the `cardLimit` option to `1` to test a screenshot of one page.
 

@@ -113,7 +113,7 @@ exports.onCreateDevServer = (
             );
 
             try {
-                console.info(`Taking screenshot of ${path}`);
+                console.info(`Taking screenshot of ${baseUrl}${path}`);
                 await takeScreenshot(
                     `${baseUrl}${path}`,
                     width,
@@ -121,9 +121,9 @@ exports.onCreateDevServer = (
                     destinationFile,
                     timeout
                 );
-                console.info('Successfully took screenshot of ', path);
+                console.info('Successfully took screenshot of ', `${baseUrl}${path}`);
             } catch (e) {
-                console.error('Taking screenshot failed', error);
+                console.error('Taking screenshot failed', e);
             }
 
             index++;
