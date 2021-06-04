@@ -2,7 +2,7 @@
 
 This Gatsby plugin lets you create React components that can then be screenshotted and used as social card images.
 
-This plugin was inspired by Max Pou's post on [generating social share images with Gatsby](https://www.maxpou.fr/generate-social-image-share-with-gatsby).
+This plugin was inspired by Maxence Poutord's post on [generating social share images with Gatsby](https://www.maxpou.fr/generate-social-image-share-with-gatsby).
 
 ## How does it work?
 

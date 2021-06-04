@@ -97,11 +97,10 @@ exports.onCreateDevServer = (
         return;
     }
 
-    console.info('Starting social card screenshots')
-
     cache.get(CACHE_KEY).then(async (socialCardPaths) => {
         let index = 0;
         for (const socialCardPath of socialCardPaths) {
+            console.info('Starting social card screenshots')
             if (index === cardLimit) break;
 
             const { path, height, width } = socialCardPath;
